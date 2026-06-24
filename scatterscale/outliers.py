@@ -2,22 +2,15 @@ import numpy as np
 
 def handle_outliers(dist, sigma_value=10, treatment='reassign'):
     """
-    Function to identify and handle outlier values in the distribution,
-    which would drastically change the scaling of the colorbar if not addressed.
+    Function to identify and handle outlier values in the distribution, which would drastically change the scaling of the colorbar if not addressed.
 
-    Inputs
-    -------
-    dist: 1d float array
-        data to be represented by the colorbar.
-    sigma_value: int, default 10
-        number of stddev to use when identifying outliers, if using the sigma method.
-    treatment: str, default='reassign'
-        how to treat the identified outliers. options are 'reassign' and 'mask_out'.
+    Args
+        dist (1d float array): data to be represented by the colorbar.
+        sigma_value (int, default 10): number of stddev to use when identifying outliers, if using the sigma method.
+        treatment (str, default='reassign'): how to treat the identified outliers; options are 'reassign' and 'mask_out'.
     
-    Outputs
-    -------
-    modified_dist: 1d float array
-        data to be represented by the colorbar, treated for outliers according to the specifications.
+    Returns
+        modified_dist (1d float array): data to be represented by the colorbar, treated for outliers according to the specifications.
     """
         
     median = np.median(dist)
