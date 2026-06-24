@@ -218,4 +218,4 @@ __marimo__/
 .streamlit/secrets.toml
 
 # This project
-data/*
+jades_dr5_photometric_catalog_subset.csv
