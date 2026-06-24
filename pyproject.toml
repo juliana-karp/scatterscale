@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools >= 77.0.3"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "scatterscale"
+version = "0.0.1"
+dynamic = ["version"]
+
+[project]
+dependencies = [
+  "numpy",
+  "matplotlib",
+  "scipy",
+  "pandas",
+]
+requires-python = ">= 3.8"
+authors = [
+  {name = "Juliana Karp", email = "jsmkarp@uw.edu"},
+  {name = "Anavi Uppal", email = "anuppal@ucsc.edu"},
+]
+maintainers = [
+  {name = "Juliana Karp", email = "jsmkarp@uw.edu"},
+  {name = "Anavi Uppal", email = "anuppal@ucsc.edu"},
+]
+readme = "README.md"
+description = "Automatically determine the best scaling for your scatterplot's colorbar."
+license = "MIT"
+
+[project.urls]
+Repository = "https://github.com/juliana-karp/scatterscale.git"
