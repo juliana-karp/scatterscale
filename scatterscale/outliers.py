@@ -33,7 +33,7 @@ def handle_outliers(data, sigma_value=10, treatment='mask_out', verbose=False):
 
     if treatment == 'mask_out':
 
-        data_modified[upper_outliers & lower_outliers] = np.nan
+        data_modified[upper_outliers | lower_outliers] = np.nan
 
     elif treatment == 'reassign':
 
