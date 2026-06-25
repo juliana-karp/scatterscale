@@ -12,9 +12,11 @@ def get_scatterscale(data):
     Options are no normalization, Asinh, SymLog, and Log.
 
     Args:
+    
         data (array): numpy vector. 1D data that the scaling is calculated for.
 
     Returns:
+
         matplotlib.colors.Norm: data normalization function
     """
 
