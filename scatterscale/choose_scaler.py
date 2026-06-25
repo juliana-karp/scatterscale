@@ -21,13 +21,13 @@ def get_scatterscale(data):
     # These functions return a matplotlib.colors norm function that can be operated on data or directly
     # used as the norm for a colorbar.
     def no_norm_operator(data):
-        return colors.NoNorm(vmin=np.min(data), vmax=np.max(data))
+        return colors.NoNorm(vmin=np.nanmin(data), vmax=np.nanmax(data))
     def asinh_norm_operator(data, linear_width=1):
-        return colors.AsinhNorm(vmin=np.min(data), vmax=np.max(data), linear_width=linear_width)
+        return colors.AsinhNorm(vmin=np.nanmin(data), vmax=np.nanmax(data), linear_width=linear_width)
     def log_norm_operator(data):
-        return colors.LogNorm(vmin=np.min(data), vmax=np.max(data))
+        return colors.LogNorm(vmin=np.nanmin(data), vmax=np.nanmax(data))
     def symlog_norm_operator(data, linthresh=0.1):
-        return colors.SymLogNorm(vmin=np.min(data), vmax=np.max(data), linthresh=linthresh)
+        return colors.SymLogNorm(vmin=np.nanmin(data), vmax=np.nanmax(data), linthresh=linthresh)
     
     all_scalings = [no_norm_operator, asinh_norm_operator, symlog_norm_operator, log_norm_operator]
     all_scaling_names = ["No normalization", "Asinh (linear_width=1)", "SymLog (linthresh=0.1)", "Log"]

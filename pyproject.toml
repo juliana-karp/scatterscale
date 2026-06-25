@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "scatterscale"
 version = "0.0.1"
 dependencies = [
-  "numpy",
+  "numpy >= 2.0",
   "matplotlib",
   "scipy",
   "pandas",
