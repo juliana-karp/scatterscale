@@ -1,18 +1,20 @@
 import numpy as np
 
-def handle_outliers(data, sigma_value=10, treatment='reassign', verbose=False):
+def handle_outliers(data, sigma_value=10, treatment='mask_out', verbose=False):
     """
     Function to identify and handle outlier values in the distribution, which would drastically change the scaling of the colorbar if not addressed.
 
     Args
         data (1d float array): data to be represented by the colorbar.
         sigma_value (int, default 10): number of stddev to use when identifying outliers, if using the sigma method.
-        treatment (str, default='reassign'): how to treat the identified outliers; options are 'reassign' and 'mask_out'.
+        treatment (str, default='mask_out'): how to treat the identified outliers; options are 'reassign' and 'mask_out'.
         verbose (bool, default=False): whether to display the number of outliers identified.
     
     Returns
         data_modified (1d float array): data to be represented by the colorbar, treated for outliers according to the specifications.
     """
+
+    assert type(data) is np.ndarray, 'Input data must be a numpy array.'
         
     median = np.median(data)
     # center the gaussian at the median of the distribution
@@ -29,16 +31,16 @@ def handle_outliers(data, sigma_value=10, treatment='reassign', verbose=False):
 
     # choose the method to treat outliers
 
-    if treatment == 'reassign':
+    if treatment == 'mask_out':
+
+        data_modified[upper_outliers | lower_outliers] = np.nan
+
+    elif treatment == 'reassign':
 
         data_modified[upper_outliers] = upper_bound
         data_modified[lower_outliers] = lower_bound
 
-    elif treatment == 'mask_out':
-
-        data_modified[upper_outliers & lower_outliers] = np.nan
-
-    if verbose == True:
+    if verbose:
         print(f'{np.sum(upper_outliers)} upper outliers found.')
         print(f'{np.sum(lower_outliers)} lower outliers found.')
 
