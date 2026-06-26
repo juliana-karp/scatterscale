@@ -35,4 +35,4 @@ A tutorial notebook is provided in `docs/tutorials/full_demo.ipynb`, showing how
 
 #### Authors
 
-Juliana Karp (University of Washington) & Anavi Uppal (UC Santa Cruz).
+[Juliana Karp](https://juliana-karp.github.io/) (University of Washington) & [Anavi Uppal](https://anaviuppal.wordpress.com/) (University of California, Santa Cruz).
