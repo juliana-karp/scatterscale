@@ -20,3 +20,7 @@ optimal_norm_no_outliers = get_scatterscale(data_for_colorbar)
 plt.scatter(x_data, y_data, c=data_for_colorbar_no_outliers, norm=optimal_norm_no_outliers)
 plt.show()
 ```
+
+### Tutorial
+
+A tutorial notebook is provided in `docs/tutorials/full_demo.ipynb`, showing how `scatterscale` works for photometric test data.
