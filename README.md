@@ -7,7 +7,8 @@ Automate the normalizing scale for your scatterplot's colorbar. Scaling options 
 ### Quick Start
 Scatterscale's ```get_scatterscale()``` function can be used to generate the matplotlib.color.Norm used for matplotlib plotting.
 
-```import scatterscale 
+```
+import scatterscale 
 optimal_norm = get_scatterscale(data_for_colorbar)
 plt.scatter(x_data, y_data, c=data_for_colorbar, norm=optimal_norm)
 plt.show()
@@ -15,7 +16,8 @@ plt.show()
 
 If you'd like to remove outliers from your data first, you can do so with ```handle_outliers()``` before running ```get_scatterscale()```.
 
-```data_for_colorbar_no_outliers = handle_outliers(data_for_colorbar, sigma_value=5, treatment="mask_out")
+```
+data_for_colorbar_no_outliers = handle_outliers(data_for_colorbar, sigma_value=5, treatment="mask_out")
 optimal_norm_no_outliers = get_scatterscale(data_for_colorbar)
 plt.scatter(x_data, y_data, c=data_for_colorbar_no_outliers, norm=optimal_norm_no_outliers)
 plt.show()
