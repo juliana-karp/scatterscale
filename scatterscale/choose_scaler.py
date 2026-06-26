@@ -12,7 +12,7 @@ def get_scatterscale(data):
     Options are no normalization, Asinh, SymLog, and Log.
 
     Args:
-    
+
         data (array): numpy vector. 1D data that the scaling is calculated for.
 
     Returns:
@@ -23,7 +23,7 @@ def get_scatterscale(data):
     # These functions return a matplotlib.colors norm function that can be operated on data or directly
     # used as the norm for a colorbar.
     def no_norm_operator(data):
-        return colors.NoNorm(vmin=np.nanmin(data), vmax=np.nanmax(data))
+        return colors.Normalize(vmin=np.nanmin(data), vmax=np.nanmax(data))
     def asinh_norm_operator(data, linear_width=1):
         return colors.AsinhNorm(vmin=np.nanmin(data), vmax=np.nanmax(data), linear_width=linear_width)
     def log_norm_operator(data):
