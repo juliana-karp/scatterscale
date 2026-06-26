@@ -1,5 +1,8 @@
 # ScatterScale
+
 Automate the normalizing scale for your scatterplot's colorbar. Scaling options are Log, SymLog, Asinh, or no normalization, as defined by [matplotlib](https://matplotlib.org/stable/api/colors_api.html#color-norms).
+
+[![A rectangular badge, half black half purple containing the text made at Code Astro](https://img.shields.io/badge/Made%20at-Code/Astro-blueviolet.svg)](https://semaphorep.github.io/codeastro/) 
 
 ### To Install
 ```pip install scatterscale```
@@ -26,3 +29,7 @@ plt.show()
 ### Tutorial
 
 A tutorial notebook is provided in `docs/tutorials/full_demo.ipynb`, showing how `scatterscale` works for photometric test data.
+
+#### Authors
+
+Juliana Karp (University of Washington) & Anavi Uppal (UC Santa Cruz).
